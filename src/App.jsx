@@ -1,8 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+
+import { StyledGreyBox } from "./style";
 
 function App() {
   const summary = 
@@ -20,27 +18,24 @@ function App() {
     return (
       <div style = {{ padding: 20, fontFamily: "Arial sans-serif"}}>
         <h3>Generated Summary</h3>
-        <div
-          style={{
-            border: "1px solid #ccc",
-            padding: 12,
-            borderRadius: 6,
+        <StyledGreyBox
+          sx={{
             whiteSpace: "pre-line",
             textAlign: "left",
-          }}
-          >
-            <strong>{inquiryHeader}</strong>
-            {"\n"}
-            {inquiryPart.replace(inquiryHeader, "").trim()}
-            {resolutionPart &&
-              <>
-                {"\n\n"}
-                <strong>{resolutionHeader}</strong>
-                {"\n"}
-                {resolutionPart.trim()}
-              </>
-            }
-          </div>
+          }}>
+          <strong>{inquiryHeader}</strong>
+          {"\n"}
+          {inquiryPart.replace(inquiryHeader, "").trim()}
+          
+          {resolutionPart && (
+            <>
+              {"\n\n"}
+              <strong>{resolutionHeader}</strong>
+              {"\n"}
+              {resolutionPart.trim()}
+            </>
+          )}
+        </StyledGreyBox>
       </div>
     )
 }
