@@ -1,0 +1,30 @@
+language: "en"
+
+reviews:
+  profile: chill
+  high_level_summary: true
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+  path_instructions:
+    - path: "**/*.jsx"
+      instructions: |
+        Review React JSX files for code clarity, proper component structure, and readability.
+        Check for correct use of props, state, hooks, and component lifecycle.
+        Ensure accessibility (ARIA), semantic HTML, and best practices in JSX syntax.
+        Validate formatting, indentation, and adherence to project style conventions.
+
+    - path: "**/*.tsx"
+      instructions: |
+        Review TypeScript React files for type correctness, component logic, and readability.
+        Check proper use of props, interfaces, generics, hooks, and lifecycle methods.
+        Ensure accessibility (ARIA), semantic HTML, and formatting consistency.
+
+  tools:
+    shellcheck:
+      enabled: true
+
+    markdownlint:
+      enabled: true
